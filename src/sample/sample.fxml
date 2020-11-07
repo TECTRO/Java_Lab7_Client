@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="400" minWidth="800" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.Controller">
+
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="0.0">
+        <center>
+            <TabPane disable="true" fx:id="MainContainer">
+                <Tab closable="false" text="Задание 1">
+                    <VBox>
+                        <BorderPane VBox.vgrow="ALWAYS">
+                            <top>
+                                <Label text="1А) Новый массив"/>
+                            </top>
+                            <center>
+                                <TextArea fx:id="OtherMassHolder" editable="false"/>
+                            </center>
+                            <right>
+                                <VBox>
+                                    <Button maxWidth="170" onAction="#GetOtherMass"
+                                            text="Получить вспомогательный массив" textAlignment="CENTER"
+                                            wrapText="true"/>
+                                    <padding>
+                                        <Insets left="5.0"/>
+                                    </padding>
+                                </VBox>
+                            </right>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </padding>
+                        </BorderPane>
+                        <BorderPane VBox.vgrow="ALWAYS">
+                            <top>
+                                <Label text="1Г) Отсортированный мссив"/>
+                            </top>
+                            <center>
+                                <TextArea fx:id="OtherSortedMassHolder" editable="false"/>
+                            </center>
+                            <right>
+                                <VBox>
+                                    <Button onAction="#GetOtherSortedMass" maxWidth="170"
+                                            text="Получить отсортированный массив" textAlignment="CENTER"
+                                            wrapText="true"/>
+                                    <padding>
+                                        <Insets left="5.0"/>
+                                    </padding>
+                                </VBox>
+                            </right>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </padding>
+                        </BorderPane>
+                    </VBox>
+                </Tab>
+                <Tab closable="false" text="Задание 7">
+                    <BorderPane>
+                        <center>
+                            <BorderPane>
+                                <center>
+                                    <ListView fx:id="StackHolder"/>
+                                </center>
+                                <bottom>
+                                    <HBox>
+                                        <TextArea fx:id="StackItemHolder" HBox.hgrow="ALWAYS" maxHeight="50" promptText="Введите строку"/>
+                                        <Button onAction="#PushStackBtn" text="Добавить в стек" maxHeight="50"/>
+
+                                        <padding>
+                                            <Insets top="5.0" />
+                                        </padding>
+                                    </HBox>
+                                </bottom>
+                            </BorderPane>
+                        </center>
+                        <right>
+                            <VBox>
+                                <Button onAction="#SendStack" text="Отправить стек" minWidth="200"/>
+                                <Button onAction="#ClearStack" text="Очистить стек" minWidth="200"/>
+
+                                <padding>
+                                    <Insets left="5.0"/>
+                                </padding>
+                            </VBox>
+                        </right>
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                        </padding>
+                    </BorderPane>
+                </Tab>
+            </TabPane>
+        </center>
+        <bottom>
+            <HBox maxHeight="100">
+                <Button fx:id="ConnectBtn" text="Подключть" onAction="#ConnectBtn"/>
+                <Label text=" Исходная коллекция " textAlignment="JUSTIFY" />
+                <Label fx:id="MainListHolder" text="1; 2; 3; 4; 5; 6;" wrapText="true"/>
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0"/>
+                </padding>
+            </HBox>
+        </bottom>
+    </BorderPane>
+
+</AnchorPane>
